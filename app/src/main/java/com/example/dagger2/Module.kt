@@ -14,7 +14,6 @@ class Module {
     fun provideBurger(bun:Bun, patty:Patty): Burger {
         return Burger(bun, patty)
     }
-
     @Provides
     fun provideBun(): Bun {
         return Bun()

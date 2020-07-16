@@ -8,6 +8,6 @@ import dagger.Component
  * Module -> Component -> Inject
  */
 @Component(modules = [Module::class])
-interface Component {g
+interface Component {
     fun inject(activity: MainActivity)
 }

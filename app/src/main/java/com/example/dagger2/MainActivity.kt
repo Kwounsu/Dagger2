@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import javax.inject.Inject
 
-
 /**
  * Inject: Receiver
  *
@@ -19,9 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val component:Component = DaggerComponent.builder()
-            .build()
-        component.inject(this)
+        // After calling inject(), Dagger guarantees to inject the proper reference for all the fields with @Inject
+        DaggerComponent.create().inject(this)
 
         Log.d("MyTag","burger bun : " + burger.bun.getBun() + " , patty : " + burger.patty.getPatty());
     }
